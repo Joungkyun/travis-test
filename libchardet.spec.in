@@ -1,7 +1,7 @@
 %define revisions "$Id$"
 %define _unpackaged_files_terminate_build 0
 
-Summary: Mozilla Universal Chardet library
+Summary: Mozilla Universal Chardet C/C++ library
 Summary(ko): 모질라 유니버샬 캐릭터셋 디텍트 라이브러리
 Name: @PACKAGE_NAME@
 Version: @PACKAGE_VERSION@
