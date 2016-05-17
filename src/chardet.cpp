@@ -13,8 +13,6 @@
  *
  * Mozilla's universal charset detector C/C++ Wrapping API
  *      Writer(s) :
- *          Detect class by John Gardiner Myers <jgmyers@proofpoint.com>
- *          C wrapping API by JoungKyun.Kim <http://oops.org>
  *
  * $Id$
  *
