@@ -17,7 +17,6 @@ addons:
 matrix:
     exclude:
         - compiler: "gcc"
-        - compiler: "clang"
     include:
         - compiler: "gcc"
           env: SERV="mariadb", VERSION="5.5", CFLAGS="-g -O2 -Wall"
@@ -28,7 +27,7 @@ before_install:
 
 script:
     - mysql_config --plugindir && echo -n "Current directory: " && pwd
-    #    - ./configure && make && sudo make install && /bin/bash travis/test.sh
+    - ./configure --with-mysql-plugins-dir=/usr/lib64/mysql/plugins && make && sudo make install && /bin/bash travis/test.sh
 
 notifications:
       email: false
