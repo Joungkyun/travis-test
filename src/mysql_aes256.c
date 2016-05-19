@@ -201,7 +201,7 @@ EXPORT_API char * aes256_encrypt (
 EXPORT_API my_bool aes256_decrypt_init (UDF_INIT * initid, UDF_ARGS * args, char * message)
 {
 	DEBUG_FUNCTION_IN;
-	int blocks, i;
+	int i;
 
 	if ( args->arg_count != 2 ) {
 		sprintf (
