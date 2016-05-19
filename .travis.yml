@@ -26,8 +26,7 @@ before_install:
     - sudo /bin/bash travis/trusty-${SERV}.sh ${VERSION}
 
 script:
-    - mysql_config --plugindir && echo -n "Current directory: " && pwd
-    - ./configure --with-mysql-plugins-dir=/usr/lib64/mysql/plugins && make && sudo make install && /bin/bash travis/test.sh
+    - mysql_config --plugindir && ./configure --with-mysql-plugins-dir=/usr/lib64/mysql/plugins && make && sudo make install && /bin/bash travis/test.sh
 
 notifications:
       email: false
