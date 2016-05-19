@@ -13,7 +13,7 @@ fi
 KEY="0123456789abcdef0123456789abcdef"
 
 enc=$(mysql -u root -e "select HEX(AES256_ENCRYPT(\"asdf\", \"${KEY}\"))" | tail -n 1)
-dec=$(mysql -u root -e "AES256_DECRYPT(UNHEX(\"${enc}\"), \"${KEY}\")" | tail -n 1)
+dec=$(mysql -u root -e "select AES256_DECRYPT(UNHEX(\"${enc}\"), \"${KEY}\")" | tail -n 1)
 
 if [ "${dec}" = "asdf" ]; then
 	echo "Pass: aes256 encrypt and decrypt"
