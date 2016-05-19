@@ -27,10 +27,10 @@ matrix:
           dist: trusty
 
 before_install:
-    - /bin/bash travis/trusty-${SERV}.sh ${VERSION}
+    - sudo /bin/bash travis/trusty-${SERV}.sh ${VERSION}
 
 script:
-    - ./configure && make && make install && /bin/bash travis/test.sh
+    - ./configure && make && sudo make install && /bin/bash travis/test.sh
 
 notifications:
       email: false
