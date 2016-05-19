@@ -2,7 +2,11 @@
 
 # add udf
 
-mysql -u root < ../docs/aes256_install.sql
+if [ -f "../docs/aes256_install.sql" ]; then
+	mysql -u root < ../docs/aes256_install.sql
+else
+	mysql -u root < ./docs/aes256_install.sql
+fi
 
 [ $? -ne 0 ] && echo "Failed registration UDF" > /dev/stdout && exit 1
 
