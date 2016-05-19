@@ -30,7 +30,8 @@ before_install:
     - sudo /bin/bash travis/trusty-${SERV}.sh ${VERSION}
 
 script:
-    - ./configure && make && sudo make install && /bin/bash travis/test.sh
+    - mysql_config --plugindir && echo -n "Current directory: " && pwd
+    #    - ./configure && make && sudo make install && /bin/bash travis/test.sh
 
 notifications:
       email: false
