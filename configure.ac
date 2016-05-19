@@ -4,7 +4,7 @@
 # $Id$
 
 AC_PREREQ(2.59)
-AC_INIT([lib_mysqludf_aes256], [1.0.3], [http://oops.org])
+AC_INIT([lib_mysqludf_aes256], [1.0.4], [http://oops.org])
 
 AC_CONFIG_AUX_DIR([build])
 AM_INIT_AUTOMAKE([-Wall -Werror -Wno-override foreign no-dependencies])
@@ -19,6 +19,7 @@ AC_PROG_CC
 AC_PROG_INSTALL
 AC_PROG_LN_S
 AC_PROG_MAKE_SET
+AM_PROG_AR
 AC_PROG_LIBTOOL
 AX_GL_VISIBILITY
 
