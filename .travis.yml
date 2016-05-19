@@ -27,7 +27,7 @@ matrix:
           dist: trusty
 
 before_install:
-    - travis/trusty-${SERV}.sh ${VERSION}
+    - /bin/bash travis/trusty-${SERV}.sh ${VERSION}
 
 script:
     - ./configure && make && make install && /bin/bash travis/test.sh
