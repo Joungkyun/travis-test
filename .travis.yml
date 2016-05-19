@@ -1,0 +1,36 @@
+language: c
+
+compiler:
+    - gcc
+    - clang
+
+addons:
+    apt:
+        packages:
+            - automake
+            - autoconf
+            - gdb
+            - libtool
+            - autotools-dev
+            - valgrind
+
+matrix:
+    exclude:
+        - compiler: "gcc"
+        - compiler: "clang"
+    include:
+        - compiler: "gcc"
+          env: SERV="mariadb", VERSION="5.5", CFLAGS="-g -O2 -Wall"
+          dist: trusty
+        - compiler: "clang"
+          env: SERV="mariadb", VERSION="5.5", CFLAGS="-g -O2 -Wall"
+          dist: trusty
+
+before_install:
+    - travis/trusty-${SERV}.sh ${VERSION}
+
+script:
+    - ./configure && make && make install && /bin/bash travis/test.sh
+
+notifications:
+      email: false
