@@ -21,7 +21,7 @@ matrix:
         - compiler: "gcc"
     include:
         - compiler: "gcc"
-          env: SERV="mysql", VERSION="5.5", CFLAGS="-g -O2 -Wall"
+          env: SERV="mysql", VERSION="5.6", CFLAGS="-g -O2 -Wall"
           dist: trusty
 
 before_install:
