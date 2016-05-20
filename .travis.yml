@@ -2,6 +2,7 @@ language: c
 
 compiler:
     - gcc
+    - clang
 
 service: mysql
 
@@ -21,6 +22,27 @@ matrix:
         - compiler: "gcc"
     include:
         - compiler: "gcc"
+          env: SERV="mariadb", VERSION="5.5", CFLAGS="-g -O2 -Wall"
+          dist: trusty
+        - compiler: "gcc"
+          env: SERV="mariadb", VERSION="10.0", CFLAGS="-g -O2 -Wall"
+          dist: trusty
+        - compiler: "gcc"
+          env: SERV="mariadb", VERSION="10.1", CFLAGS="-g -O2 -Wall"
+          dist: trusty
+        - compiler: "gcc"
+          env: SERV="mariadb", VERSION="10.2", CFLAGS="-g -O2 -Wall"
+          dist: trusty
+        - compiler: "clang"
+          env: SERV="mariadb", VERSION="5.5", CFLAGS="-g -O2 -Wall"
+          dist: trusty
+        - compiler: "clang"
+          env: SERV="mariadb", VERSION="10.0", CFLAGS="-g -O2 -Wall"
+          dist: trusty
+        - compiler: "clang"
+          env: SERV="mariadb", VERSION="10.1", CFLAGS="-g -O2 -Wall"
+          dist: trusty
+        - compiler: "clang"
           env: SERV="mariadb", VERSION="10.2", CFLAGS="-g -O2 -Wall"
           dist: trusty
 
