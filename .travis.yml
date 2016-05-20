@@ -21,7 +21,7 @@ matrix:
         - compiler: "gcc"
     include:
         - compiler: "gcc"
-          env: SERV="mariadb", VERSION="10.1", CFLAGS="-g -O2 -Wall"
+          env: SERV="mariadb", VERSION="10.2", CFLAGS="-g -O2 -Wall"
           dist: trusty
 
 before_install:
