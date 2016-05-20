@@ -16,6 +16,7 @@ addons:
             - mysql-client
             - libmysqlclient-dev
 
+
 matrix:
     exclude:
         - compiler: "gcc"
