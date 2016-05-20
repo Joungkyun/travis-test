@@ -10,6 +10,8 @@ addons:
             - autoconf
             - libtool
             - autotools-dev
+            - mysql-server
+            - mysql-client
 
 matrix:
     exclude:
