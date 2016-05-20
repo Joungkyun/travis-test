@@ -12,9 +12,6 @@ addons:
             - autoconf
             - libtool
             - autotools-dev
-            - mysql-server
-            - mysql-client
-            - libmysqlclient-dev
 
 matrix:
     exclude:

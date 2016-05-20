@@ -7,13 +7,13 @@ MIRROR="sfo1.mirrors.digitalocean.com"
 
 case "$VER" in
 	'5.5' )
-		#INSTPKG="mysql-server"
+		INSTPKG="mysql-server mysql-client libmysqlclient-dev"
 		;;
 	'5.6' | '5.7')
 		apt-get -y install software-properties-common
 		add-apt-repository -y ppa:ondrej/mysql-${VER}
 
-		INSTPKG="mysql-server libmysqlclient-dev"
+		INSTPKG="mysql-server mysql-client libmysqlclient-dev"
 		;;
 	*)
 		echo "Unsupport version \"$VER\"" > /dev/stdout
@@ -22,7 +22,7 @@ esac
 
 if [ -n "${INSTPKG}" ]; then
 	apt-get update
-	apt-get upgrade -y ${INSTPKG}
+	apt-get install -y ${INSTPKG}
 fi
 
 exit 0
