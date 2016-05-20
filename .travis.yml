@@ -3,6 +3,8 @@ language: c
 compiler:
     - gcc
 
+service: mysql
+
 addons:
     apt:
         packages:
@@ -12,6 +14,7 @@ addons:
             - autotools-dev
             - mysql-server
             - mysql-client
+            - libmysqlclient-dev
 
 matrix:
     exclude:
